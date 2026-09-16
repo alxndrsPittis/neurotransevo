@@ -12,7 +12,7 @@ A concise overview of every analysis, with the resulting panels, is in [`docs/in
 | Analysis | Figures | Code |
 |---|---|---|
 | Cell-type-averaged expression matrices for six single-cell atlases (mouse, fly, *Hydra*, *Nematostella*, *Mnemiopsis*, *Spongilla*) | all expression panels | `R/matrices.R`, `scripts/01_build_matrices.R` |
-| Amine-metabolism coregulons (Pearson r ≥ 0.5, BH-adjusted p ≤ 0.05, intersected with GO:0009308) | 8, S11–S14 | `R/coregulons.R`, `scripts/02_compute_coregulons.R`, `scripts/03_plot_coregulons.R` |
+| Amine-metabolism coregulons (Pearson r ≥ 0.5, BH-adjusted p ≤ 0.05, intersected with GO:0009308) | 8, S11–S13 | `R/coregulons.R`, `scripts/02_compute_coregulons.R`, `scripts/03_plot_coregulons.R` |
 | Gene-family expression heatmaps | 4D–E, 5C–D, 7, S4–S10 | `R/heatmaps.R`, `scripts/04_plot_family_heatmaps.R` |
 | Boltz-2 receptor–ligand binding predictions | 4B, S15 | `python/boltz/` |
 | Gene-family phylogenies (HMMER, BLAST+MCL, MAFFT/Clustal Omega, IQ-TREE/FastTree) and tree plotting | 2, 3, 4A–B, 5A–B, S1–S2 | `scripts/phylogeny_pipeline.sh`, `scripts/mcl_clusters.sh`, `python/phylogenies/` |

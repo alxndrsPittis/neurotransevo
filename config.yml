@@ -19,6 +19,7 @@ paths:
   proteomes: data/proteomes
   # Boltz-2 affinity table (committed) and, optionally, raw Boltz-2 outputs.
   boltz_table: data/boltz2/boltz_affinities_v2.csv
+  boltz_predictions: data/boltz2/boltz_predictions_full.csv
   boltz_raw: data/boltz2/raw
   # Everything the pipeline writes.
   results: results

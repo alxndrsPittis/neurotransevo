@@ -64,16 +64,23 @@ expression_heatmap <- function(mat, genes, labels = genes, row_split = NULL,
   keep <- if (keep_empty) rep(TRUE, length(genes)) else !empty
   m <- m[keep, , drop = FALSE]; empty <- empty[keep]
   rownames(m) <- labels[keep]
-  if (length(row_split) == length(genes)) row_split <- factor(row_split[keep], levels = unique(row_split[keep]))
+  if (length(row_split) == length(genes)) {
+    lv <- if (is.factor(row_split)) levels(droplevels(row_split[keep])) else unique(row_split[keep])
+    row_split <- factor(as.character(row_split[keep]), levels = lv)
+  }
   if (!is.null(left_annotation)) left_annotation <- left_annotation[keep, ]
   z <- scale_rows(m)
   z[empty, ] <- NA
 
+  pearson_dist <- function(x) {
+    d <- 1 - cor(t(x), use = "pairwise.complete.obs")
+    d[!is.finite(d)] <- 1
+    as.dist(d)
+  }
   row_clust <- FALSE
   if (isTRUE(cluster_rows) && sum(!empty) > 1) {
-    d <- 1 - cor(t(m), use = "pairwise.complete.obs")
-    d[!is.finite(d)] <- 1
-    row_clust <- as.dendrogram(hclust(as.dist(d), method = "complete"))
+    # With a grouping vector, rows are clustered within each group (same distance/linkage).
+    row_clust <- if (is.factor(row_split)) TRUE else as.dendrogram(hclust(pearson_dist(m), method = "complete"))
   }
 
   gp <- function(size = HM$fontsize, face = "plain") gpar(fontsize = size, fontfamily = HM$font, fontface = face)
@@ -84,6 +91,8 @@ expression_heatmap <- function(mat, genes, labels = genes, row_split = NULL,
     na_col = "grey75",
     cluster_columns = FALSE,
     cluster_rows = row_clust,
+    clustering_distance_rows = pearson_dist,
+    clustering_method_rows = "complete",
     row_dend_reorder = FALSE,
     show_row_dend = FALSE,
     column_split = neuron_split(colnames(z)),

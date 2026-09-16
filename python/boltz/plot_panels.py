@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Boltz-2 binding-affinity dot plots: Fig. 4B (right) and Fig. S15.
+"""Boltz-2 binding-affinity dot plots: Fig. 4B (right) and Fig. S14.
 
 Dot size = binding probability (affinity_probability_binary); colour =
 -affinity_pred_value (higher = stronger predicted binding).
@@ -85,7 +85,7 @@ def main():
     if missing:
         sys.exit(f"receptors missing from {CFG['paths']['boltz_table']}: {sorted(missing)}")
     dotplot(prob, aff, FIG4B_ORDER, (4.8, 10.0), "Fig4B_boltz_dotplot", highlight=POCKET_CONSERVED)
-    dotplot(prob, aff, CONTROLS, (4.6, 3.0), "FigS15_boltz_controls", title="Control receptors (specificity check)")
+    dotplot(prob, aff, CONTROLS, (4.6, 3.0), "FigS14_boltz_controls", title="Control receptors (specificity check)")
     summary = prob.loc[FIG4B_ORDER + CONTROLS, LIGANDS].round(3)
     summary.insert(0, "top_ligand", prob.loc[summary.index, LIGANDS].idxmax(axis=1))
     summary.to_csv(results_path("tables", "boltz_probabilities.tsv"), sep="\t")

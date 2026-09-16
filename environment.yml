@@ -29,3 +29,4 @@ dependencies:
   - matplotlib
   - seaborn
   - pyyaml
+  - openpyxl
