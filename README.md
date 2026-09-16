@@ -24,7 +24,7 @@ SVG and PDF outputs keep text editable.
 ## Quick start
 
 ```bash
-git clone https://github.com/<user>/neurotransevo.git
+git clone https://github.com/alxndrsPittis/neurotransevo.git
 cd neurotransevo
 conda env create -f environment.yml
 conda activate neurotransevo
