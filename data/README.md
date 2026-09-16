@@ -13,6 +13,8 @@ user; their location is set in `config.yml` / `config.local.yml`.
 | `mappings/mouse_uniprot2ensembl.tab` | UniProt accession → Ensembl gene (mouse). |
 | `mappings/mouse_ensembl2symbol.tab` | Ensembl gene → gene symbol (Cao et al. 2019 gene annotation). |
 | `mappings/spongilla_gene2protein.tab` | Trinity gene → protein ID (Musser et al. 2021). |
+| `boltz2/boltz_predictions_full.csv` | Boltz-2 predictions with structure-confidence metrics (Table S4); `boltz2/inputs/` holds the input YAML files. |
+| `phylogenies/Table_S5.phylogenies.tsv` | Alignments and trees behind the figures (Table S5), with original and deposited file names. |
 | `boltz2/boltz_affinities_v2.csv` | Boltz-2 affinity predictions: 46 receptors × 6 ligands (ACh, dopamine, serotonin, tryptamine, 2-phenylethylamine, histamine), both prediction heads and their mean. |
 
 ## To download (not redistributed)
@@ -33,7 +35,8 @@ Other inputs:
 
 | Config key | Content | Source |
 |---|---|---|
-| `paths.eggnog` | eggNOG-mapper v2.1.7 annotation tables (`*.emapper.annotations`) of the six proteomes | Zenodo deposit of this study |
-| `paths.proteomes` | `UP000000803_7227.fasta` (Drosophila reference proteome; used to map UniProt accessions to FlyBase symbols) | UniProt |
-| `paths.boltz_raw` | Raw Boltz-2 output folders (`boltz_results_<protein>.vs.<ligand>/`) | Zenodo deposit of this study |
-| — | Protein datasets, multiple sequence alignments and trees of the phylogenetic analyses | Zenodo deposit of this study |
+| `paths.eggnog` | eggNOG-mapper v2.1.7 annotation tables (`*.emapper.annotations`) of the six proteomes | Zenodo: `neurotransevo_singlecell_annotations.zip` (`eggnog/`) |
+| `paths.proteomes` | `UP000000803_7227.fasta` (Drosophila reference proteome; used to map UniProt accessions to FlyBase symbols) | Zenodo: `neurotransevo_singlecell_annotations.zip` (`proteomes/`) |
+| `paths.boltz_raw` | Boltz-2 inputs, MSAs, structures, affinity and confidence files | Zenodo: `neurotransevo_boltz2_predictions.zip` |
+| — | Alignments and trees behind Figs 2–5 and S1–S2 (Table S5) | Zenodo: `neurotransevo_phylogenies.zip` |
+| — | Cell-type-averaged matrices and coregulon tables (to skip rebuilding from the atlases) | Zenodo: `neurotransevo_singlecell_annotations.zip` (`matrices/`, `coregulons/`) |

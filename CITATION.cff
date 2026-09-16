@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the article."
+title: "neurotransevo: code for 'From promiscuity to specialization: The origin of biogenic amine signaling is pre-bilaterian'"
+license: MIT
+repository-code: "https://github.com/alxndrsPittis/neurotransevo"
+authors:
+  - family-names: Pittis
+    given-names: Alexandros A.
+  - family-names: Yañez-Guerra
+    given-names: Luis Alfonso
+  - family-names: Ruperti
+    given-names: Fabian
+  - family-names: Musser
+    given-names: Jacob M.
+  - family-names: Cole
+    given-names: Alison G.
+  - family-names: Marinković
+    given-names: Milena
+  - family-names: Thiel
+    given-names: Daniel
+  - family-names: Huerta-Cepas
+    given-names: Jaime
+  - family-names: Technau
+    given-names: Ulrich
+  - family-names: Jékely
+    given-names: Gáspár
+  - family-names: Arendt
+    given-names: Detlev

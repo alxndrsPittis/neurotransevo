@@ -101,12 +101,12 @@ linsi clade.fasta &gt; clade.linsi
 python python/phylogenies/filter_gappy_columns.py clade.linsi 0.9 &gt; clade.linsi.gt01
 iqtree -s clade.linsi.gt01 -m MFP -mset LG -bb 1000 -nt AUTO</pre>
 <h3 id="phylo-table">Trees and alignments (Table S5)</h3>
-<p>Every tree was linked to its alignment by content (identical sequence sets) and to its IQ-TREE report; sequence counts equal tree leaves in all cases. Files are deposited under the numbered names below. <span class="flag">Flagged rows</span> are still being confirmed.</p>
+<p>Every tree was linked to its alignment by content (identical sequence sets) and to its IQ-TREE report; sequence counts equal tree leaves in all cases. Files are deposited under the numbered names below.</p>
 <div class="wrap"><table>
   <tr><th>ID</th><th>Fig.</th><th>Family</th><th>Tree</th><th class="n">Seqs</th><th class="n">Columns</th><th>Alignment</th><th>Tree method</th><th>Model</th></tr>
   <tr><td>01</td><td>2B</td><td>carnitine acyltransferases</td><td>family</td><td class="n">506</td><td class="n">867</td><td>L-INS-i, &gt;90%</td><td>IQ-TREE</td><td>LG+F+R9</td></tr>
   <tr><td>02</td><td>2B, S2</td><td>carnitine acyltransferases</td><td>ChAT/CrAT clade</td><td class="n">169</td><td class="n">1590</td><td>L-INS-i, &gt;90%</td><td>IQ-TREE</td><td>LG+F+R7</td></tr>
-  <tr><td>03</td><td>2C</td><td>biopterin hydroxylases</td><td>family</td><td class="n">559</td><td class="n">–</td><td class="flag">alignment not preserved</td><td>FastTree</td><td>LG</td></tr>
+  <tr><td>03</td><td>2C</td><td>biopterin hydroxylases</td><td>family</td><td class="n">559</td><td class="n">5386</td><td>FFT-NS-2, none</td><td>FastTree</td><td>LG</td></tr>
   <tr><td>04</td><td>2C</td><td>biopterin hydroxylases</td><td>AAAH clade</td><td class="n">179</td><td class="n">538</td><td>L-INS-i, &gt;90%</td><td>IQ-TREE</td><td>LG+R7</td></tr>
   <tr><td>05</td><td>2D</td><td>PLP decarboxylases</td><td>family</td><td class="n">2195</td><td class="n">9530</td><td>FFT-NS-2, none</td><td>FastTree</td><td>LG</td></tr>
   <tr><td>06</td><td>2D</td><td>PLP decarboxylases</td><td>AADC clade</td><td class="n">194</td><td class="n">583</td><td>L-INS-i, &gt;90%</td><td>IQ-TREE</td><td>LG+R8</td></tr>
@@ -115,19 +115,18 @@ iqtree -s clade.linsi.gt01 -m MFP -mset LG -bb 1000 -nt AUTO</pre>
   <tr><td>09</td><td>2E</td><td>DOMON monooxygenases</td><td>DBH/MOXD clade</td><td class="n">236</td><td class="n">3394</td><td>L-INS-i, &gt;90%</td><td>IQ-TREE</td><td>LG+R8</td></tr>
   <tr><td>10</td><td>3A</td><td>MFS superfamily</td><td>family</td><td class="n">8784</td><td class="n">1130</td><td>FFT-NS-2, &gt;90%</td><td>FastTree</td><td>LG</td></tr>
   <tr><td>11</td><td>3A</td><td>MFS superfamily</td><td>SLC18 (cluster 0005)</td><td class="n">404</td><td class="n">662</td><td>L-INS-i, &gt;90%</td><td>IQ-TREE</td><td>LG+F+R9</td></tr>
-  <tr><td>12</td><td>3A</td><td>MFS superfamily</td><td>SLC22 (cluster 0001)</td><td class="n">1441</td><td class="n">890</td><td>Clustal Omega, &gt;90%</td><td>FastTree</td><td class="flag">to confirm</td></tr>
-  <tr><td>13</td><td>3A</td><td>MFS superfamily</td><td>SLC22 subset</td><td class="n">440</td><td class="n">756</td><td>E-INS-i, &gt;90%</td><td>IQ-TREE</td><td class="flag">LG+F+R8 · to confirm</td></tr>
+  <tr><td>12</td><td>3A</td><td>MFS superfamily</td><td>SLC22 (cluster 0001)</td><td class="n">1441</td><td class="n">890</td><td>Clustal Omega, &gt;90%</td><td>FastTree</td><td>LG</td></tr>
+  <tr><td>13</td><td>3A</td><td>MFS superfamily</td><td>SLC22 subset</td><td class="n">440</td><td class="n">756</td><td>E-INS-i, &gt;90%</td><td>IQ-TREE</td><td>LG+F+R8</td></tr>
   <tr><td>14</td><td>3B</td><td>SSF transporters</td><td>family</td><td class="n">5704</td><td class="n">17894</td><td>FFT-NS-2, none</td><td>FastTree</td><td>LG</td></tr>
   <tr><td>15</td><td>3B</td><td>SSF transporters</td><td>ChT clade</td><td class="n">221</td><td class="n">628</td><td>L-INS-i, &gt;90%</td><td>IQ-TREE</td><td>LG+R9</td></tr>
-  <tr><td>16</td><td>4A</td><td>rhodopsin GPCRs</td><td>MCL cluster 0002 (source)</td><td class="n">3173</td><td class="n">607</td><td>FFT-NS-2, &gt;90%</td><td>FastTree</td><td>LG</td></tr>
-  <tr><td>17</td><td>4A</td><td>rhodopsin GPCRs</td><td>4–10 TM filtered (clade source)</td><td class="n">2657</td><td class="n">3271</td><td>Clustal Omega, &gt;99%</td><td>FastTree</td><td>LG</td></tr>
-  <tr><td>18</td><td>4A</td><td>rhodopsin GPCRs</td><td>H-ACh-monoamine clade</td><td class="n">1092</td><td class="n">2650</td><td>Clustal Omega, &gt;99%</td><td>IQ-TREE</td><td>LG+F+R10</td></tr>
-  <tr><td>19</td><td>4B</td><td>rhodopsin GPCRs</td><td>subclade, 7-species subset</td><td class="n">151</td><td class="n">689</td><td>L-INS-i, &gt;90%</td><td>FastTree</td><td class="flag">variant to confirm</td></tr>
-  <tr><td>20</td><td>5A</td><td>Cys-loop LGICs</td><td>family</td><td class="n">2538</td><td class="n">840</td><td>Clustal Omega, &gt;90%</td><td>FastTree</td><td>LG</td></tr>
-  <tr><td>21</td><td>5B</td><td>Cys-loop LGICs</td><td>cationic clade subset</td><td class="n">212</td><td class="n">593</td><td>E-INS-i, &gt;90%</td><td>IQ-TREE</td><td class="flag">LG+F+R10 · to confirm</td></tr>
-  <tr><td>22</td><td>S1A</td><td>NNMT/PNMT/TEMT</td><td>family</td><td class="n">290</td><td class="n">1224</td><td>L-INS-i, &gt;90%</td><td>IQ-TREE</td><td>LG+R7</td></tr>
-  <tr><td>23</td><td>S1B</td><td>cytochrome P450</td><td>family</td><td class="n">4935</td><td class="n">3097</td><td>Clustal Omega, &gt;99%</td><td>FastTree</td><td>LG</td></tr>
-  <tr><td>24</td><td>S1B</td><td>cytochrome P450</td><td>CYP2 clade subset</td><td class="n">131</td><td class="n">540</td><td>E-INS-i, &gt;90%</td><td>IQ-TREE</td><td class="flag">LG+F+R6 · to confirm</td></tr>
+  <tr><td>16</td><td>4A</td><td>rhodopsin GPCRs</td><td>MCL cluster 0002</td><td class="n">3173</td><td class="n">607</td><td>FFT-NS-2, &gt;90%</td><td>FastTree</td><td>LG</td></tr>
+  <tr><td>17</td><td>4A</td><td>rhodopsin GPCRs</td><td>4–10 TM filtered</td><td class="n">2657</td><td class="n">3271</td><td>Clustal Omega, &gt;99%</td><td>FastTree</td><td>LG</td></tr>
+  <tr><td>18</td><td>4A</td><td>rhodopsin GPCRs</td><td>H-ACh-monoamine clade (Fig. 4B is a species-trimmed schematic of its mAChR subclade)</td><td class="n">1092</td><td class="n">2650</td><td>Clustal Omega, &gt;99%</td><td>IQ-TREE</td><td>LG+F+R10</td></tr>
+  <tr><td>19</td><td>5A</td><td>Cys-loop LGICs</td><td>family</td><td class="n">2538</td><td class="n">840</td><td>Clustal Omega, &gt;90%</td><td>FastTree</td><td>LG</td></tr>
+  <tr><td>20</td><td>5B</td><td>Cys-loop LGICs</td><td>cationic clade subset</td><td class="n">212</td><td class="n">593</td><td>E-INS-i, &gt;90%</td><td>IQ-TREE</td><td>LG+F+R10</td></tr>
+  <tr><td>21</td><td>S1A</td><td>NNMT/PNMT/TEMT</td><td>family</td><td class="n">290</td><td class="n">1224</td><td>L-INS-i, &gt;90%</td><td>IQ-TREE</td><td>LG+R7</td></tr>
+  <tr><td>22</td><td>S1B</td><td>cytochrome P450</td><td>family</td><td class="n">4935</td><td class="n">3097</td><td>Clustal Omega, &gt;99%</td><td>FastTree</td><td>LG</td></tr>
+  <tr><td>23</td><td>S1B</td><td>cytochrome P450</td><td>CYP2 clade subset</td><td class="n">131</td><td class="n">540</td><td>E-INS-i, &gt;90%</td><td>IQ-TREE</td><td>LG+F+R6</td></tr>
 </table></div>
 <p>The complete table, including original and deposited file names, is <a href="../data/phylogenies/Table_S5.phylogenies.tsv"><code>data/phylogenies/Table_S5.phylogenies.tsv</code></a>; the deposit is built by <code>python/phylogenies/build_deposit.py</code>.</p>
 <div class="box"><b>Reading the trees.</b> Broad-specificity family members (CrAT, PAH, AADC, MOXD-like monooxygenases, VPAT, SLC22) are present across non-bilaterian animals, whereas the substrate-specific enzymes and transporters (ChAT, TH, TPH, DBH/TBH, VAChT/VMAT) arise by duplication within Bilateria. mAChR orthologs are found in medusozoan cnidarians; nAChR subunits in both cnidarian lineages.</div>
@@ -209,8 +208,9 @@ make all                                         # matrices → coregulons → f
 <h2 id="deposits">Data deposits</h2>
 <div class="wrap"><table>
   <tr><th>Archive</th><th>Content</th></tr>
-  <tr><td><code>neurotransevo_phylogenies.zip</code></td><td>24 trees and alignments behind Figs 2–5 and S1–S2, numbered as in Table S5, with IQ-TREE reports</td></tr>
-  <tr><td><code>neurotransevo_boltz2_predictions.zip</code></td><td>Boltz-2 inputs, per-receptor MSAs, predicted structures, affinity and confidence files for all 276 predictions</td></tr>
+  <tr><td><code>neurotransevo_phylogenies.zip</code> (18 MB)</td><td>23 alignments and trees behind Figs 2–5 and S1–S2, numbered as in Table S5, with IQ-TREE reports</td></tr>
+  <tr><td><code>neurotransevo_singlecell_annotations.zip</code> (50 MB)</td><td>eggNOG-mapper annotations, curated gene families, cell-type-averaged expression matrices and coregulon tables; unpack into <code>data/</code> to run the pipeline without rebuilding matrices</td></tr>
+  <tr><td><code>neurotransevo_boltz2_predictions.zip</code> (507 MB)</td><td>Boltz-2 inputs, per-receptor MSAs, predicted structures, affinity and confidence files for all 276 predictions (Table S4)</td></tr>
 </table></div>
 </main>
 </div>
