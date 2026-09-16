@@ -1,0 +1,20 @@
+# Tools for the gene-family phylogenies and tree plotting (versions as in Methods where stated).
+#   conda env create -f envs/phylogenies.yml
+name: neurotransevo-phylogenies
+channels:
+  - conda-forge
+  - bioconda
+  - nodefaults
+dependencies:
+  - python=3.9
+  - hmmer=3.3.2
+  - blast=2.11.0
+  - mcl
+  - mafft=7.475
+  - clustalo=1.2.4
+  - iqtree=1.6.12
+  - fasttree=2.1.11
+  - seqkit
+  - ete3
+  - pyqt=5
+  - numpy

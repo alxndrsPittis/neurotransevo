@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>neurotransevo analyses</title>
+<meta name="description" content="Concise overview of the analyses behind 'From promiscuity to specialization: The origin of biogenic amine signaling is pre-bilaterian'.">
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1d2127; --muted: #5b6470; --line: #e3e6ea; --card: #f6f7f9;
+    --accent: #b2182b; --accent2: #2166ac; --code: #eef1f4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #14171b; --fg: #e6e8eb; --muted: #9aa3ad; --line: #2a2f36; --card: #1b1f24;
+      --accent: #ef8a62; --accent2: #67a9cf; --code: #22272e;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14171b; --fg: #e6e8eb; --muted: #9aa3ad; --line: #2a2f36; --card: #1b1f24;
+    --accent: #ef8a62; --accent2: #67a9cf; --code: #22272e;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 64px; }
+  header p { color: var(--muted); margin-top: 4px; }
+  h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 8px; }
+  h2 { font-size: 1.25rem; margin: 48px 0 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+  h3 { font-size: 1rem; margin: 20px 0 6px; }
+  nav { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 20px 0 0; font-size: .92rem; }
+  nav a, a { color: var(--accent2); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86rem; }
+  code { background: var(--code); padding: 1px 5px; border-radius: 4px; }
+  pre { background: var(--code); padding: 12px 14px; border-radius: 8px; overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: .92rem; margin: 10px 0; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .table-wrap { overflow-x: auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 16px 0; }
+  figure { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 8px; }
+  figure img { width: 100%; height: auto; display: block; }
+  figcaption { color: #5b6470; font-size: .82rem; margin-top: 6px; }
+  .note { background: var(--card); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 6px; font-size: .94rem; }
+  .pill { display: inline-block; font-size: .78rem; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); margin-left: 6px; }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>From promiscuity to specialization: the origin of biogenic amine signaling is pre-bilaterian</h1>
+  <p>Pittis, Yañez-Guerra, Ruperti, Musser, Cole, Marinković, Thiel, Huerta-Cepas, Technau, Jékely, Arendt — analysis overview for the <code>neurotransevo</code> repository.</p>
+  <nav>
+    <a href="#data">Data</a><a href="#matrices">1 · Expression matrices</a><a href="#coregulons">2 · Coregulons</a>
+    <a href="#families">3 · Family heatmaps</a><a href="#boltz">4 · Boltz-2</a><a href="#phylogenies">5 · Phylogenies</a>
+    <a href="#reproduce">Reproduce</a>
+  </nav>
+</header>
+
+<h2 id="data">Data</h2>
+<div class="table-wrap"><table>
+  <tr><th>Species</th><th>Single-cell atlas</th><th>Cell types used</th><th class="num">n</th></tr>
+  <tr><td><i>Mus musculus</i></td><td>Cao et al. 2019 (organogenesis)</td><td>main cell types</td><td class="num">37</td></tr>
+  <tr><td><i>Drosophila melanogaster</i></td><td>Fly Cell Atlas, 10x body (Li et al. 2022)</td><td>fine annotation, artefacts removed</td><td class="num">33</td></tr>
+  <tr><td><i>Hydra vulgaris</i></td><td>Siebert et al. 2019 UMI matrix</td><td>cell types of Levy et al. 2021</td><td class="num">32</td></tr>
+  <tr><td><i>Nematostella vectensis</i></td><td>adult MARS-seq atlas</td><td>cell types of Levy et al. 2021</td><td class="num">73</td></tr>
+  <tr><td><i>Mnemiopsis leidyi</i></td><td>Sebé-Pedrós et al. 2018</td><td>metacell annotation</td><td class="num">55</td></tr>
+  <tr><td><i>Spongilla lacustris</i></td><td>Musser et al. 2021</td><td>cell types of Table 1</td><td class="num">23</td></tr>
+</table></div>
+<p>Curated gene-family members (from the phylogenies), eggNOG-mapper v2.1.7 annotations and Boltz-2 predictions complete the inputs. Download instructions: <a href="../data/README.md"><code>data/README.md</code></a>.</p>
+
+<h2 id="matrices">1 · Cell-type-averaged expression</h2>
+<p>For each atlas, UMI counts are summed per annotated cell type and divided by the number of cells of that type. The same six matrices feed every expression figure and the coregulon analysis. <span class="pill">R/matrices.R</span></p>
+
+<h2 id="coregulons">2 · Amine-metabolism coregulons <span class="pill">Fig. 8, S11–S14</span></h2>
+<p>Seeds are the members of eight families involved in amine biosynthesis, vesicular transport and reuptake (Acetyltransf, Biopterin_H, Pyridoxal-AADC, DOMON, P450-CYP2D6, SLC18, SLC5, SNF). For each seed, Pearson r and a two-tailed p-value are computed across cell types against all expressed genes; p-values are Benjamini–Hochberg-adjusted per seed within the candidate pool (GO:0009308 “amine metabolic process” genes plus seeds).</p>
+<div class="note">A gene joins the coregulon when <b>r ≥ 0.5</b> and <b>adjusted p ≤ 0.05</b> for at least one seed that has a non-self partner; the coregulon is the union of GO:0009308 partners and these active seeds.</div>
+<div class="table-wrap"><table>
+  <tr><th>Species</th><th class="num">Cell types</th><th class="num">Seeds (active)</th><th class="num">Coregulon genes</th><th>Figure</th></tr>
+  <tr><td><i>Hydra</i></td><td class="num">32</td><td class="num">18 (14)</td><td class="num">48</td><td>8A</td></tr>
+  <tr><td><i>Nematostella</i></td><td class="num">73</td><td class="num">37 (17)</td><td class="num">35</td><td>8B</td></tr>
+  <tr><td><i>Mnemiopsis</i></td><td class="num">55</td><td class="num">27 (17)</td><td class="num">29</td><td>S11</td></tr>
+  <tr><td><i>Spongilla</i></td><td class="num">23</td><td class="num">20 (13)</td><td class="num">32</td><td>S12</td></tr>
+  <tr><td>Mouse</td><td class="num">37</td><td class="num">78 (54)</td><td class="num">100</td><td>S13</td></tr>
+  <tr><td><i>Drosophila</i></td><td class="num">33</td><td class="num">31 (26)</td><td class="num">48</td><td>S14</td></tr>
+</table></div>
+<p>Highlights: the kynurenine pathway (KYNU, HAAO, KMO, ACMSD, AFMID in <i>Hydra</i>; IDO1/2, AFMID, KYNU, KMO, HAAO, CCBL2 in <i>Spongilla</i>; TDO2 in <i>Nematostella</i> and <i>Mnemiopsis</i>), NAPE-PLD/GDPD1/GDE1 in <i>Hydra</i>, three ASMT paralogs in <i>Nematostella</i>, and six MOXD1-family paralogs in <i>Spongilla</i>.</p>
+<div class="grid">
+  <figure><img src="img/Fig8A_Hydra_coregulon.png" alt="Hydra coregulon heatmap"><figcaption>Fig. 8A — <i>Hydra</i> coregulon; left bar marks seed genes by family.</figcaption></figure>
+  <figure><img src="img/Fig8B_Nematostella_coregulon.png" alt="Nematostella coregulon heatmap"><figcaption>Fig. 8B — <i>Nematostella</i> coregulon.</figcaption></figure>
+</div>
+
+<h2 id="families">3 · Gene-family expression heatmaps <span class="pill">Fig. 4D–E, 5C–D, 7, S4–S10</span></h2>
+<p>Rows are the curated members of each family (table order; hand-curated phylogeny order where published), z-scored across cell types. Columns are ordered by complete-linkage clustering of 1 − Pearson r on the whole transcriptome, with neuronal cell types in a right-hand block, so every panel of a species shares the same column order. Fig. 5C–D add the Pearson correlation (p ≤ 0.05) of each nAChR subunit with Rapsyn-related genes.</p>
+<div class="grid">
+  <figure><img src="img/Fig7B_hydra_enzymes_transporters.png" alt="Hydra enzymes and transporters heatmap"><figcaption>Fig. 7B — <i>Hydra</i> biosynthesis enzymes and transporters.</figcaption></figure>
+  <figure><img src="img/Fig5C_mouse_nAChR.png" alt="Mouse nAChR subunits with Rapsyn correlation"><figcaption>Fig. 5C — mouse nAChR subunits; right: correlation with Rapsyn.</figcaption></figure>
+  <figure><img src="img/Fig5D_hydra_nAChR.png" alt="Hydra nAChR subunits with Rapsyn-related correlation"><figcaption>Fig. 5D — <i>Hydra</i> nAChR-clade subunits.</figcaption></figure>
+  <figure><img src="img/Fig4E_hydra_mAChR_clade.png" alt="Hydra mAChR-clade receptor expression"><figcaption>Fig. 4E — <i>Hydra</i> mAChR-clade receptors.</figcaption></figure>
+</div>
+
+<h2 id="boltz">4 · Boltz-2 binding predictions <span class="pill">Fig. 4B, S15</span></h2>
+<p>46 receptors were scored against acetylcholine, dopamine, serotonin, tryptamine, 2-phenylethylamine and histamine; the reported probability and affinity are the means of the two Boltz-2 prediction heads.</p>
+<div class="table-wrap"><table>
+  <tr><th>Receptor group</th><th>Top-ranked ligand</th><th class="num">P(binder) for top ligand</th></tr>
+  <tr><td>Human, mouse and fly mAChRs</td><td>acetylcholine</td><td class="num">0.983–0.998</td></tr>
+  <tr><td>HRH2–4 (human, mouse)</td><td>histamine</td><td class="num">0.905–0.990</td></tr>
+  <tr><td>5HT2A–C / DRD2–4</td><td>serotonin / dopamine</td><td class="num">0.993–0.998</td></tr>
+  <tr><td><i>Hydra</i> ACh-rec1, ACh-rec2, t21045aep (conserved orthosteric site)</td><td>acetylcholine</td><td class="num">0.997–0.998</td></tr>
+  <tr><td><i>Hydra</i> receptors with orthosteric substitutions</td><td>mixed</td><td class="num">ACh 0.55–0.74</td></tr>
+  <tr><td>MneR (ctenophore), TriR (placozoan)</td><td>none</td><td class="num">≤ 0.23</td></tr>
+</table></div>
+<figure style="max-width:420px"><img src="img/Fig4B_boltz_dotplot.png" alt="Boltz-2 dot plot"><figcaption>Fig. 4B (right) — dot size: binding probability; colour: −affinity_pred_value.</figcaption></figure>
+
+<h2 id="phylogenies">5 · Gene-family phylogenies <span class="pill">Fig. 2–5, S1–S2</span></h2>
+<ol>
+  <li>Pfam HMM search (<code>hmmsearch --cut_ga</code>) against 68 eukaryotic proteomes and UniProt prokaryotic reference proteomes; above 300 prokaryotic hits, at most 100 per phylum.</li>
+  <li>MFS and GPCR-A superfamilies: all-vs-all BLASTP (E ≤ 1e-5) clustered with MCL (inflation 1.4 and 6.0).</li>
+  <li>MAFFT E-INS-i / L-INS-i, columns with &gt;90% gaps removed, IQ-TREE (LG models, ultrafast bootstrap); for &gt;1,000 sequences Clustal Omega, &gt;99% gap filter and FastTree, followed by re-analysis of the clade of interest.</li>
+  <li>Trees annotated and drawn with ETE (<code>python/phylogenies/plot_gene_tree.py</code>).</li>
+</ol>
+
+<h2 id="reproduce">Reproduce</h2>
+<pre>conda env create -f environment.yml
+conda activate neurotransevo
+cp config.local.yml.example config.local.yml   # set data paths
+make all</pre>
+<p>The rebuilt matrices and coregulons match the ones used for the manuscript figures to floating-point precision.</p>
+</main>
+</body>
+</html>

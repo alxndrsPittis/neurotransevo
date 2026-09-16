@@ -1,0 +1,23 @@
+# Row order and blocks of the mouse nAChR/5-HT3R subunits in Fig. 5C (blank line = block break).
+# Order = complete-linkage clustering of 1 - Pearson r across cell types; blocks as published.
+# ACHE_MOUSE (epsilon) is absent from the Cao et al. 2019 matrix and is shown as an empty row.
+ACHA7_MOUSE
+ACHA2_MOUSE
+ACHB2_MOUSE
+ACHA5_MOUSE
+ACHA4_MOUSE
+ACHB4_MOUSE
+ACHA3_MOUSE
+
+ACHD_MOUSE
+ACHA_MOUSE
+ACHB_MOUSE
+ACHG_MOUSE
+ACHE_MOUSE
+
+5HT3B_MOUSE
+ACHA6_MOUSE
+
+G3X8Z7_MOUSE
+5HT3A_MOUSE
+ACHB3_MOUSE

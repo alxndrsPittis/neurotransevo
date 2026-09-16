@@ -1,0 +1,16 @@
+# Row order and blocks of the Hydra nAChR-clade subunits in Fig. 5D (curated; blank line = block break)
+t24402aep
+t958aep
+t25424aep
+t6938aep
+
+t14269aep
+t14821aep
+
+t36058aep
+t25411aep
+t27771aep
+t31040aep
+t4592aep
+t2286aep
+t1608aep

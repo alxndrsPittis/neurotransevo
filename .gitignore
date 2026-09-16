@@ -1,0 +1,21 @@
+# Local configuration
+config.local.yml
+
+# Pipeline outputs (regenerate with `make all`)
+results/
+
+# Large / external inputs (see data/README.md)
+data/singlecell/
+data/eggnog/
+data/proteomes/
+data/boltz2/raw/
+
+# OS / tool noise
+@eaDir/
+.DS_Store
+.Rhistory
+.RData
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+Rplots.pdf

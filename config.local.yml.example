@@ -1,0 +1,7 @@
+# Copy to config.local.yml (git-ignored) and override only what differs on
+# your machine. Absolute paths are used as-is; relative ones are resolved
+# against the repository root.
+paths:
+  singlecell: /path/to/archive/01.Data/SingleCell
+  eggnog: /path/to/archive/02.Analysis/SingleCell/Clustering/GOannotations
+  proteomes: /path/to/archive/01.Data

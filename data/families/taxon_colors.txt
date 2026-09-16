@@ -1,0 +1,17 @@
+2759	#cacfd2 # Eukaryota
+#33090	#52be80 # Viridiplantae
+554915	#a6acaf	# Amoebozoa
+33154	#626567	# Opisthokonta
+2686024	#d7bde2 # Rotosphaerida - Nucleariidae and Fonticula group
+4751	#633974 # Fungi
+33208	#e6b0aa # Metazoa
+6040	#dc7633	# Porifera
+6073	#3e5196 # Cnidaria
+10197	#547d65	# Ctenophora
+#140493	#52be80	# Ctenophora
+33213	#A0522D # Bilateria
+33511	#A52A2A	# Deuterostomia
+2157	#f7dc6f # Archaea
+2	#7fb3d5 # Bacteria
+#34499	#547d65	# Pleurobachia bachei
+#27923	#547d65	# Pleurobachia bachei

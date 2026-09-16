@@ -1,0 +1,31 @@
+# Conda environment for the full neurotransevo pipeline (R + Python).
+#   conda env create -f environment.yml
+#   conda activate neurotransevo
+#   Rscript scripts/install_extra_R.R    # SCopeLoomR (GitHub-only; Drosophila loom reader)
+name: neurotransevo
+channels:
+  - conda-forge
+  - bioconda
+  - nodefaults
+dependencies:
+  # ---- R -------------------------------------------------------------------
+  - r-base=4.4
+  - bioconductor-complexheatmap
+  - r-circlize
+  - r-rcolorbrewer
+  - r-pheatmap
+  - r-hmisc
+  - r-data.table
+  - r-matrix
+  - r-yaml
+  - r-hdf5r
+  - r-remotes
+  - r-sessioninfo
+  - r-svglite
+  # ---- Python ----------------------------------------------------------------
+  - python=3.11
+  - numpy
+  - pandas
+  - matplotlib
+  - seaborn
+  - pyyaml
