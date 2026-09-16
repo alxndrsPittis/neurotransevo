@@ -5,7 +5,7 @@ Code to reproduce the analyses and figures of
 > Pittis A.A., Yañez-Guerra L.A., Ruperti F., Musser J.M., Cole A.G., Marinković M., Thiel D., Huerta-Cepas J., Technau U., Jékely G., Arendt D.
 > **From promiscuity to specialization: The origin of biogenic amine signaling is pre-bilaterian.**
 
-A concise overview of every analysis, with the resulting panels, is in [`docs/index.html`](docs/index.html).
+A concise walkthrough of every analysis (methods, key code, results and the resulting panels) is in [`docs/WALKTHROUGH.md`](docs/WALKTHROUGH.md).
 
 ## What is here
 
@@ -14,7 +14,7 @@ A concise overview of every analysis, with the resulting panels, is in [`docs/in
 | Cell-type-averaged expression matrices for six single-cell atlases (mouse, fly, *Hydra*, *Nematostella*, *Mnemiopsis*, *Spongilla*) | all expression panels | `R/matrices.R`, `scripts/01_build_matrices.R` |
 | Amine-metabolism coregulons (Pearson r ≥ 0.5, BH-adjusted p ≤ 0.05, intersected with GO:0009308) | 8, S11–S13 | `R/coregulons.R`, `scripts/02_compute_coregulons.R`, `scripts/03_plot_coregulons.R` |
 | Gene-family expression heatmaps | 4D–E, 5C–D, 7, S4–S10 | `R/heatmaps.R`, `scripts/04_plot_family_heatmaps.R` |
-| Boltz-2 receptor–ligand binding predictions | 4B, S15 | `python/boltz/` |
+| Boltz-2 receptor–ligand binding predictions | 4B, S14; Table S4 | `python/boltz/` |
 | Gene-family phylogenies (HMMER, BLAST+MCL, MAFFT/Clustal Omega, IQ-TREE/FastTree) and tree plotting | 2, 3, 4A–B, 5A–B, S1–S2 | `scripts/phylogeny_pipeline.sh`, `scripts/mcl_clusters.sh`, `python/phylogenies/` |
 
 All expression heatmaps share one style (`R/heatmaps.R`): cell types ordered by complete-linkage clustering of
