@@ -9,9 +9,8 @@ import pandas as pd
 
 LIGANDS = {"ach": "acetylcholine", "dop": "dopamine", "ser": "serotonin",
            "try": "tryptamine", "pea": "2-phenylethylamine", "his": "histamine"}
-CLADE_A = ["XP_012561693.1", "t17782aep", "t21045aep", "XP_012561685.1", "XP_012561731.1",
-           "t18253aep", "XP_012562020.1", "t1966aep"]
-CLADE_B = ["XP_012554108.1", "XP_012561998.1", "XP_012561929.1", "t19057aep", "XP_012560064.1",
+CLADE_A = ["XP_012561693.1", "t17782aep", "t21045aep", "XP_012561685.1", "XP_012561731.1"]
+CLADE_B = ["t18253aep", "XP_012562020.1", "t1966aep", "XP_012554108.1", "XP_012561998.1", "XP_012561929.1", "t19057aep", "XP_012560064.1",
            "XP_012563056.1", "t25534aep", "XP_012562068.1", "XP_012562571.1", "XP_002170550.2"]
 CONSERVED = {"XP_012561685.1": "ACh-rec1", "XP_012561731.1": "ACh-rec2", "t21045aep": "t21045aep (ACh-rec1/2 transcript)"}
 
