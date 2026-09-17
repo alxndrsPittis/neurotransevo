@@ -173,7 +173,7 @@ python python/boltz/plot_panels.py
 | HRH2–4 (human, mouse) | histamine | 0.905–0.990 |
 | 5HT2A–C / DRD2–4 | serotonin / dopamine | 0.993–0.998 |
 | *Hydra* ACh-rec1, ACh-rec2, t21045aep (conserved orthosteric site) | acetylcholine | 0.997–0.998 |
-| *Hydra* receptors with orthosteric substitutions | mixed | ACh 0.55–0.74 |
+| Other *Hydra* receptors (orthosteric substitutions or incomplete sequences) | mixed | ACh 0.06–0.74 (XP_012562020.1: 0.975) |
 | MneR (ctenophore), TriR (placozoan) | none | ≤ 0.23 |
 
 **Interpretation.** The controls recover their known ligands (HRH1 is the exception), which supports reading the *Hydra* predictions: the two receptors with a fully conserved orthosteric site, and the matching transcript, are predicted to bind acetylcholine as strongly as bilaterian mAChRs, while receptors with pocket substitutions are not.
