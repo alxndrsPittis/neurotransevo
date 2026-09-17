@@ -35,8 +35,8 @@ Other inputs:
 
 | Config key | Content | Source |
 |---|---|---|
-| `paths.eggnog` | eggNOG-mapper v2.1.7 annotation tables (`*.emapper.annotations`) of the six proteomes | Zenodo: `neurotransevo_singlecell_annotations.zip` (`eggnog/`) |
-| `paths.proteomes` | `UP000000803_7227.fasta` (Drosophila reference proteome; used to map UniProt accessions to FlyBase symbols) | Zenodo: `neurotransevo_singlecell_annotations.zip` (`proteomes/`) |
-| `paths.boltz_raw` | Boltz-2 inputs, MSAs, structures, affinity and confidence files | Zenodo: `neurotransevo_boltz2_predictions.zip` |
-| — | Alignments and trees behind Figs 2–5 and S1–S2 (Table S5) | Zenodo: `neurotransevo_phylogenies.zip` |
-| — | Cell-type-averaged matrices and coregulon tables (to skip rebuilding from the atlases) | Zenodo: `neurotransevo_singlecell_annotations.zip` (`matrices/`, `coregulons/`) |
+| `paths.eggnog` | eggNOG-mapper v2.1.7 annotation tables (`*.emapper.annotations`) of the six proteomes | Zenodo ([10.5281/zenodo.22813072](https://doi.org/10.5281/zenodo.22813072)): `neurotransevo_singlecell_annotations.zip` (`eggnog/`) |
+| `paths.proteomes` | `UP000000803_7227.fasta` (Drosophila reference proteome; used to map UniProt accessions to FlyBase symbols) | Zenodo ([10.5281/zenodo.22813072](https://doi.org/10.5281/zenodo.22813072)): `neurotransevo_singlecell_annotations.zip` (`proteomes/`) |
+| `paths.boltz_raw` | Boltz-2 inputs, MSAs, structures, affinity and confidence files | Zenodo ([10.5281/zenodo.22813072](https://doi.org/10.5281/zenodo.22813072)): `neurotransevo_boltz2_predictions.zip` |
+| — | Alignments and trees behind Figs 2–5 and S1–S2 (Table S5) | Zenodo ([10.5281/zenodo.22813072](https://doi.org/10.5281/zenodo.22813072)): `neurotransevo_phylogenies.zip` |
+| — | Cell-type-averaged matrices and coregulon tables (to skip rebuilding from the atlases) | Zenodo ([10.5281/zenodo.22813072](https://doi.org/10.5281/zenodo.22813072)): `neurotransevo_singlecell_annotations.zip` (`matrices/`, `coregulons/`) |

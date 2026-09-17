@@ -195,6 +195,8 @@ Paths are read from `config.yml`, overridden by `config.local.yml` or `NEUROTRAN
 
 ## Data deposits
 
+Zenodo, DOI [10.5281/zenodo.22813072](https://doi.org/10.5281/zenodo.22813072).
+
 | Archive | Content |
 |---|---|
 | `neurotransevo_phylogenies.zip` (18 MB) | 23 alignments and trees behind Figs 2–5 and S1–S2, numbered as in Table S5, with IQ-TREE reports |
