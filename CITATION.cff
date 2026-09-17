@@ -6,23 +6,33 @@ repository-code: "https://github.com/alxndrsPittis/neurotransevo"
 authors:
   - family-names: Pittis
     given-names: Alexandros A.
+    orcid: "https://orcid.org/0000-0003-4116-9972"
   - family-names: Yañez-Guerra
     given-names: Luis Alfonso
+    orcid: "https://orcid.org/0000-0002-2523-1310"
   - family-names: Ruperti
     given-names: Fabian
+    orcid: "https://orcid.org/0000-0002-0724-3262"
   - family-names: Musser
     given-names: Jacob M.
+    orcid: "https://orcid.org/0000-0002-6163-5152"
   - family-names: Cole
     given-names: Alison G.
+    orcid: "https://orcid.org/0000-0002-7515-7489"
   - family-names: Marinković
     given-names: Milena
   - family-names: Thiel
     given-names: Daniel
+    orcid: "https://orcid.org/0000-0003-1398-3512"
   - family-names: Huerta-Cepas
     given-names: Jaime
+    orcid: "https://orcid.org/0000-0003-4195-5025"
   - family-names: Technau
     given-names: Ulrich
+    orcid: "https://orcid.org/0000-0003-4472-8258"
   - family-names: Jékely
     given-names: Gáspár
+    orcid: "https://orcid.org/0000-0001-8496-9836"
   - family-names: Arendt
     given-names: Detlev
+    orcid: "https://orcid.org/0000-0001-7833-050X"
