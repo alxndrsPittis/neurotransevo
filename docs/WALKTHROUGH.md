@@ -10,8 +10,8 @@ The paper asks whether the machinery that makes, packages and receives acetylcho
 | [Gene-family phylogenies and gene-family evolution](#1-gene-family-phylogenies) | 2, 3, 4A–B, 5A–B, S1–S2 | `scripts/phylogeny_pipeline.sh`, `python/phylogenies/` |
 | [Cell-type expression matrices](#2-cell-type-expression-matrices) | all expression panels | `R/matrices.R`, `scripts/01_build_matrices.R` |
 | [Gene-family expression heatmaps](#3-gene-family-expression-heatmaps) | 4D–E, 5C–D, 7, S4–S10 | `R/heatmaps.R`, `scripts/04_plot_family_heatmaps.R` |
-| [Amine-metabolism coregulons](#4-amine-metabolism-coregulons) | 8A–C, S11–S13 | `R/coregulons.R`, `scripts/02_compute_coregulons.R`, `scripts/03_plot_coregulons.R` |
-| [Boltz-2 binding predictions](#5-boltz-2-binding-predictions) | 4B, S14; Table S4 | `python/boltz/` |
+| [Amine-metabolism coregulons](#4-amine-metabolism-coregulons) | 8, S11–S14 | `R/coregulons.R`, `scripts/02_compute_coregulons.R`, `scripts/03_plot_coregulons.R` |
+| [Boltz-2 binding predictions](#5-boltz-2-binding-predictions) | 4B, S15; Table S4 | `python/boltz/` |
 
 See also: [Data](#data) · [Reproduce](#reproduce) · [Data deposits](#data-deposits)
 
@@ -165,7 +165,7 @@ cell_type_order <- function(mat) {
 
 ## 4. Amine-metabolism coregulons
 
-*Figs 8A–C, S11–S13*
+*Fig. 8, Figs S11–S14*
 
 Which genes are co-expressed, across cell types, with the enzymes and transporters of amine metabolism? Seeds are the members of eight families (Acetyltransf, Biopterin_H, Pyridoxal-AADC, DOMON, P450-CYP2D6, SLC18, SLC5, SNF).
 
@@ -186,22 +186,22 @@ In the heatmaps, genes are grouped by the cell-type class in which their express
 
 | Species | Cell types | Seeds (active) | Genes | Figure |
 |---|--:|--:|--:|---|
-| *Hydra* | 32 | 18 (14) | 48 | 8A |
-| *Nematostella* | 73 | 37 (17) | 35 | 8B |
-| *Mnemiopsis* | 55 | 27 (17) | 29 | 8C |
-| *Spongilla* | 23 | 20 (13) | 32 | S11 |
-| Mouse | 37 | 78 (54) | 100 | S12 |
-| *Drosophila* | 33 | 31 (26) | 48 | S13 |
+| *Hydra* | 32 | 18 (14) | 48 | 8 |
+| *Nematostella* | 73 | 37 (17) | 35 | S11A |
+| *Mnemiopsis* | 55 | 27 (17) | 29 | S11B |
+| *Spongilla* | 23 | 20 (13) | 32 | S12 |
+| Mouse | 37 | 78 (54) | 100 | S13 |
+| *Drosophila* | 33 | 31 (26) | 48 | S14 |
 
 **Interpretation.** Beyond the expected core (AADC and PAH paralogs, CRAT, choline-handling enzymes, SLC18B1/VPAT, white/ABCG transporters), the coregulons recover the kynurenine pathway (most completely in *Spongilla*), NAPE-PLD/GDPD1/GDE1 in *Hydra*, ASMT paralogs in *Nematostella* and an expanded MOXD1 repertoire in *Spongilla*, which lacks neurons. In the bilaterians, the same neighbourhoods are occupied by the substrate-specific duplicates (TPH1, NET, VMAT1 in mouse; Tβh, Tdc2, Trh, ChAT, VAChT in *Drosophila*).
 
 | | | |
 |---|---|---|
-| <img src="img/Fig8A_Hydra_coregulon.png" alt="Hydra coregulon heatmap"><br>**Fig. 8A** — *Hydra* | <img src="img/Fig8B_Nematostella_coregulon.png" alt="Nematostella coregulon heatmap"><br>**Fig. 8B** — *Nematostella* | <img src="img/Fig8C_Mnemiopsis_coregulon.png" alt="Mnemiopsis coregulon heatmap"><br>**Fig. 8C** — *Mnemiopsis* |
+| <img src="img/Fig8A_Hydra_coregulon.png" alt="Hydra coregulon heatmap"><br>**Fig. 8** — *Hydra* | <img src="img/Fig8B_Nematostella_coregulon.png" alt="Nematostella coregulon heatmap"><br>**Fig. S11A** — *Nematostella* | <img src="img/Fig8C_Mnemiopsis_coregulon.png" alt="Mnemiopsis coregulon heatmap"><br>**Fig. S11B** — *Mnemiopsis* |
 
 ## 5. Boltz-2 binding predictions
 
-*Fig. 4B, S14 · Table S4*
+*Fig. 4B, Fig. S15 · Table S4*
 
 46 receptors — bilaterian muscarinic, histamine, serotonin and dopamine receptors of known specificity, *Hydra* mAChR-clade receptors, and a ctenophore and a placozoan receptor — were each predicted in complex with acetylcholine, dopamine, serotonin, tryptamine, 2-phenylethylamine and histamine (Boltz 2.2.1, default settings, MSAs from the ColabFold server). Affinity and binder probability are the means of the two affinity heads.
 
@@ -224,7 +224,7 @@ python python/boltz/plot_panels.py
 
 | | |
 |---|---|
-| <img src="img/Fig4B_boltz_dotplot.png" alt="Boltz-2 dot plot" width="380"><br>**Fig. 4B** (right) — dot size: binder probability; colour: −affinity_pred_value. | <img src="img/FigS14_boltz_controls.png" alt="Boltz-2 control receptors" width="380"><br>**Fig. S14** — serotonin and dopamine receptor controls. |
+| <img src="img/Fig4B_boltz_dotplot.png" alt="Boltz-2 dot plot" width="380"><br>**Fig. 4B** (right) — dot size: binder probability; colour: −affinity_pred_value. | <img src="img/FigS14_boltz_controls.png" alt="Boltz-2 control receptors" width="380"><br>**Fig. S15** — serotonin and dopamine receptor controls. |
 
 ## Reproduce
 
