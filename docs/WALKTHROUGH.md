@@ -7,7 +7,7 @@ The paper asks whether the machinery that makes, packages and receives acetylcho
 
 | Analysis | Figures | Code |
 |---|---|---|
-| [Gene-family phylogenies](#1-gene-family-phylogenies) | 2, 3, 4A–B, 5A–B, S1–S2 | `scripts/phylogeny_pipeline.sh`, `python/phylogenies/` |
+| [Gene-family phylogenies and gene-family evolution](#1-gene-family-phylogenies) | 2, 3, 4A–B, 5A–B, S1–S2 | `scripts/phylogeny_pipeline.sh`, `python/phylogenies/` |
 | [Cell-type expression matrices](#2-cell-type-expression-matrices) | all expression panels | `R/matrices.R`, `scripts/01_build_matrices.R` |
 | [Gene-family expression heatmaps](#3-gene-family-expression-heatmaps) | 4D–E, 5C–D, 7, S4–S10 | `R/heatmaps.R`, `scripts/04_plot_family_heatmaps.R` |
 | [Amine-metabolism coregulons](#4-amine-metabolism-coregulons) | 8A–C, S11–S13 | `R/coregulons.R`, `scripts/02_compute_coregulons.R`, `scripts/03_plot_coregulons.R` |
@@ -33,6 +33,50 @@ Protein datasets of 68 eukaryotic species (Table S2) plus UniProt prokaryotic re
 *Figs 2–5, S1–S2 · Table S5*
 
 For each gene involved in biosynthesis, vesicular transport, reuptake or reception of a transmitter, the Pfam family of its product was searched across all proteomes. Presence, absence and orthology of the bilaterian specialists (ChAT, TH, TPH, VAChT, VMAT, mAChRs, nAChR subunits) are read from these trees.
+
+Every transmitter in the paper is made, packaged, taken up and received by members of a handful of protein families. Each of them is one tree.
+
+<img src="img/phylo_pathways.png" alt="Biosynthetic pathways of the biogenic amines with the enzyme family of each step" width="760">
+
+*Biosynthesis of the biogenic amines. Substrate-specific enzymes are in red, the promiscuous alternatives in blue, and the protein family of each enzyme in brackets (Fig. 2A).*
+
+### The families, and what each tree shows
+
+The panels below are cropped from Figures 2–5; the same taxon colours are used throughout.
+
+<img src="img/phylo_taxon_colors.png" alt="Taxon colour key" width="420">
+
+**Carnitine acyltransferases (PF00755) — acetylcholine synthesis.** ChAT and CrAT sit in one clade. Bona fide CrATs are present in sponges, cnidarians and bilaterians, and co-orthologs of both reach beyond animals (fungi, *Capsaspora*, other eukaryotes), but ChAT appears only in Bilateria. The four substrate-determining residues follow the split: "MVNN" in bilaterian ChAT, "ATTR" in CrAT and in most non-bilaterian co-orthologs. Acetylcholine synthesis is therefore a specialization of an older, promiscuous acetyltransferase, not a new enzyme.
+
+<img src="img/phylo_carnitine.png" alt="Carnitine acyltransferase tree with the ChAT and CrAT clades" width="620">
+
+**Biopterin-dependent hydroxylases (PF00351) — serotonin and dopamine precursors.** Non-bilaterians have a single PAH-type enzyme; TH and TPH are bilaterian duplicates. Since PAH also hydroxylates tryptophan to 5-HTP, this one ancestral enzyme suffices for serotonin synthesis in animals without TPH.
+
+<img src="img/phylo_biopterin.png" alt="Biopterin-dependent hydroxylase tree, AAAH clade" width="620">
+
+**Pyridoxal-phosphate decarboxylases (PF00282) — the decarboxylation step.** AADC/DDC orthologs are present in every non-bilaterian group examined, and the narrow specialists (TDC, HDC, and GAD1/2 for GABA) are bilaterian duplicates. AADC decarboxylates L-DOPA, 5-HTP, tyrosine, phenylalanine, tryptophan and histidine, so a single ancestral enzyme opens the route to trace amines and histamine.
+
+<img src="img/phylo_plp.png" alt="Pyridoxal-phosphate decarboxylase tree with the AADC and GAD clades" width="720">
+
+**DOMON monooxygenases (PF03351) — β-hydroxylation.** The bilaterian specialists DBH (norepinephrine) and TβH (octopamine) are nested within a broader MOXD clade that non-bilaterians retain. *Spongilla* keeps six co-expressed MOXD1 paralogs despite having no neurons.
+
+<img src="img/phylo_domon.png" alt="DOMON monooxygenase tree with the DBH, TBH and MOXD clades" width="620">
+
+**SLC18 and SLC22 (PF07690, MFS) — vesicular loading and transport.** SLC18 splits into an A branch (VAChT, VMAT) and a B branch (VPAT) already in early eukaryotes; the VAChT/VMAT duplication that separates acetylcholine from monoamine loading happens in the bilaterian stem. VPAT, which loads amines non-selectively, is present across animals and beyond, and the broad-specificity SLC22 transporters are the sister group of the synaptic vesicle proteins SV2 and SVOP.
+
+<img src="img/phylo_slc18_slc22.png" alt="SLC18 and SLC22 trees" width="760">
+
+**SSF/SLC5 — choline reuptake.** The high-affinity choline transporter ChT (SLC5A7) is one branch of the sodium-solute symporter family, next to the monocarboxylate and myo-inositol transporters.
+
+<img src="img/phylo_ssf.png" alt="SSF/SLC5 transporter tree with the ChT clade" width="520">
+
+**Rhodopsin GPCRs (PF00001) — metabotropic reception.** Acetylcholine, histamine and monoamine receptors form one clade, to the exclusion of adenosine, cannabinoid, melatonin and peptide receptors. Within it, medusozoan cnidarian sequences are orthologous to bilaterian mAChRs (anthozoans have lost them), while other cnidarian, ctenophore and placozoan sequences sit near the H2 receptors. The dedicated dopamine, serotonin and trace-amine receptors are a bilaterian expansion inside the same clade.
+
+<img src="img/phylo_gpcr.png" alt="Rhodopsin GPCR tree of the histamine, acetylcholine and monoamine receptor clade" width="620">
+
+**Cys-loop channels (PF02931/PF02932) — ionotropic reception.** An ancient duplication separates anion-selective (GABA, glycine) from cation-selective (ACh, 5-HT) subunits. nAChR orthologs are present in both anthozoan and medusozoan cnidarians, so the channel dates to the cnidarian–bilaterian ancestor, which had a single homopentameric subunit; cnidarian and bilaterian subunits then expanded independently, and 5-HT3 receptors were lost in cnidarians.
+
+<img src="img/phylo_cysloop.png" alt="Cys-loop superfamily tree and the cationic clade" width="820">
 
 ### Workflow
 
