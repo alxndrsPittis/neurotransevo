@@ -76,7 +76,7 @@ The panels below are cropped from Figures 2–5; the same taxon colours are used
 
 **Cys-loop channels (PF02931/PF02932) — ionotropic reception.** An ancient duplication separates anion-selective (GABA, glycine) from cation-selective (ACh, 5-HT) subunits. nAChR orthologs are present in both anthozoan and medusozoan cnidarians, so the channel dates to the cnidarian–bilaterian ancestor, which had a single homopentameric subunit; cnidarian and bilaterian subunits then expanded independently, and 5-HT3 receptors were lost in cnidarians.
 
-<img src="img/phylo_cysloop.png" alt="Cys-loop superfamily tree and the cationic clade" width="820">
+<img src="img/phylo_cysloop.png" alt="Cys-loop ligand-gated ion channel superfamily tree" width="820">
 
 ### Workflow
 
