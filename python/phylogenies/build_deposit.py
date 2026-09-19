@@ -124,7 +124,7 @@ table[["ID", "Figure", "Protein family", "Tree"] + PROVENANCE].to_csv(
     ROOT / "06.Data/phylogenies/Table_S5.provenance_internal.tsv", sep="\t", index=False)
 table = table.drop(columns=PROVENANCE)
 table.to_csv(ROOT / "06.Data/phylogenies/Table_S5.phylogenies.tsv", sep="\t", index=False)
-table.to_excel(ROOT / "03.Tables/supplementary/Table_S5.phylogenies.xlsx", sheet_name="Phylogenies", index=False)
+table.to_excel(ROOT / "03.Tables/supplementary/Table_S5.xlsx", sheet_name="Phylogenies", index=False)
 
 readme = ("Trees and alignments of the gene-family phylogenies — Pittis et al.\n\n"
           "Files are named <ID>_<Figure>_<family>_<tree>. Each entry has the alignment (FASTA), the tree (Newick)\n"
