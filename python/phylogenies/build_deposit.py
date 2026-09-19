@@ -119,13 +119,17 @@ for eid, fig, family, step, aln_name, tree_name, status in ENTRIES:
     print(f"{eid} {fig:7s} {step:32s} seqs={n:<5} cols={cols:<6} leaves={leaves:<5} {model:10s} {status}")
 
 table = pd.DataFrame(rows)
+PROVENANCE = ["Original alignment", "Original tree", "Note"]          # working paths: internal only
+table[["ID", "Figure", "Protein family", "Tree"] + PROVENANCE].to_csv(
+    ROOT / "06.Data/phylogenies/Table_S5.provenance_internal.tsv", sep="\t", index=False)
+table = table.drop(columns=PROVENANCE)
 table.to_csv(ROOT / "06.Data/phylogenies/Table_S5.phylogenies.tsv", sep="\t", index=False)
-table.to_excel(ROOT / "03.Tables/supplementary/Table_S5.phylogenies.xlsx", index=False)
+table.to_excel(ROOT / "03.Tables/supplementary/Table_S5.phylogenies.xlsx", sheet_name="Phylogenies", index=False)
 
 readme = ("Trees and alignments of the gene-family phylogenies — Pittis et al.\n\n"
           "Files are named <ID>_<Figure>_<family>_<tree>. Each entry has the alignment (FASTA), the tree (Newick)\n"
           "and, for IQ-TREE runs, the IQ-TREE report.\n"
-          "Table_S5.phylogenies.tsv lists sequences, alignment columns, methods, models and the original file names.\n"
+          "Table_S5.phylogenies.tsv lists sequences, alignment columns, methods, models and the deposited file names.\n"
           "Family trees were computed with FastTree (-lg) or IQ-TREE; clades of interest were extracted, re-aligned and\n"
           "recomputed with IQ-TREE. MFS and rhodopsin GPCR superfamilies were first clustered with BLASTP + MCL.\n")
 with zipfile.ZipFile(ZIP, "w", zipfile.ZIP_DEFLATED) as z:
