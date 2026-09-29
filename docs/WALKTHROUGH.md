@@ -1,7 +1,7 @@
 # Analysis walkthrough
 
 **From promiscuity to specialization: the origin of biogenic amine signaling is pre-bilaterian**
-Pittis, Yañez-Guerra, Ruperti, Musser, Cole, Marinković, Thiel, Huerta-Cepas, Technau, Jékely, Arendt
+Pittis, Yañez-Guerra, Ruperti, Cole, Marinković, Thiel, Huerta-Cepas, Musser, Technau, Jékely, Arendt
 
 The paper asks whether the machinery that makes, packages and receives acetylcholine and monoamines predates bilaterian animals. The computational evidence comes from four analyses: gene-family phylogenies (who has which enzyme, transporter or receptor), single-cell expression (where those genes are expressed and which genes are co-expressed with them), and structure-based binding predictions for candidate cnidarian receptors. Metabolomics and immunohistochemistry (Figs 1, 6) are experimental and not part of this repository.
 

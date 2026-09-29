@@ -2,7 +2,7 @@
 
 Code to reproduce the analyses and figures of
 
-> Pittis A.A., Yañez-Guerra L.A., Ruperti F., Musser J.M., Cole A.G., Marinković M., Thiel D., Huerta-Cepas J., Technau U., Jékely G., Arendt D.
+> Pittis A.A., Yañez-Guerra L.A., Ruperti F., Cole A.G., Marinković M., Thiel D., Huerta-Cepas J., Musser J.M., Technau U., Jékely G., Arendt D.
 > **From promiscuity to specialization: The origin of biogenic amine signaling is pre-bilaterian.**
 
 ![Species sampled and inferred origins of neurotransmission components](docs/img/overview.png)
