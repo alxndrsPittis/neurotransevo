@@ -1,11 +1,15 @@
 # neurotransevo
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23324945.svg)](https://doi.org/10.5281/zenodo.23324945)
+
 Code to reproduce the analyses and figures of
 
 > Pittis A.A., Yañez-Guerra L.A., Ruperti F., Cole A.G., Marinković M., Thiel D., Huerta-Cepas J., Musser J.M., Technau U., Jékely G., Arendt D.
 > **From promiscuity to specialization: The origin of cholinergic and monoaminergic signaling is pre-bilaterian.**
 
 ![Species sampled and inferred origins of neurotransmission components](docs/img/overview.png)
+
+Code archive (release v1.0.0): Zenodo, DOI [10.5281/zenodo.23324945](https://doi.org/10.5281/zenodo.23324945).
 
 Data (alignments, trees, expression matrices, coregulons, Boltz-2 predictions): Zenodo, DOI [10.5281/zenodo.22813072](https://doi.org/10.5281/zenodo.22813072).
 

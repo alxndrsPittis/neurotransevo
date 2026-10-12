@@ -5,7 +5,7 @@ Two deposits back the paper:
 | Deposit | DOI | Status |
 |---|---|---|
 | Data (alignments/trees, single-cell annotations + matrices + coregulons, Boltz-2 raw) | [10.5281/zenodo.22813072](https://doi.org/10.5281/zenodo.22813072) | **draft — DOI reserved, not yet published** (resolves 404 until published) |
-| Code (this repository) | — | frozen at tag `v1.0.0`; Zenodo DOI minted via GitHub release (see B) |
+| Code (this repository) | [10.5281/zenodo.23324945](https://doi.org/10.5281/zenodo.23324945) (concept 10.5281/zenodo.23324944) | **published 2026-10-12** from GitHub release `v1.0.0` |
 
 ---
 
@@ -74,6 +74,6 @@ GitHub integration at journal publication if desired.
 - [ ] Data deposit published; `https://doi.org/10.5281/zenodo.22813072` resolves.
 - [ ] Three data zips verified: unzip cleanly, file names match `Table_S5` /
       `data/README.md`.
-- [ ] Repo public + release `v1.0.0` + code DOI minted (or fallback deposit published).
+- [x] Repo public + release `v1.0.0` + code DOI minted (10.5281/zenodo.23324945, 2026-10-12).
 - [ ] Manuscript Data/Code Availability quotes both DOIs and the GitHub URL.
 - [ ] After bioRxiv acceptance: add the preprint DOI to both Zenodo records.

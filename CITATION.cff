@@ -3,6 +3,16 @@ message: "If you use this code, please cite the article."
 title: "neurotransevo: code for 'From promiscuity to specialization: The origin of cholinergic and monoaminergic signaling is pre-bilaterian'"
 license: MIT
 repository-code: "https://github.com/alxndrsPittis/neurotransevo"
+version: "1.0.0"
+date-released: "2026-10-12"
+doi: "10.5281/zenodo.23324945"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23324945"
+    description: "Zenodo archive of release v1.0.0"
+  - type: doi
+    value: "10.5281/zenodo.23324944"
+    description: "Zenodo concept DOI (all versions)"
 authors:
   - family-names: Pittis
     given-names: Alexandros A.
